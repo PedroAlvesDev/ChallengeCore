@@ -11,6 +11,7 @@ body {
     font-family: 'Cinzel', serif;
     min-height: 100vh;
     overflow-x: hidden;
+    text-align: center;
 }
 
 .title {

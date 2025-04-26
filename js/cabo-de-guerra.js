@@ -1,4 +1,4 @@
-const square = document.getElementById("square");
+const cable = document.getElementById("cable");
 const statusText = document.getElementById("status");
 
 let position = 0;
@@ -12,7 +12,7 @@ function pull(button) {
   if (gameOver) return;
 
   position += 10;
-  square.style.left = position + "px";
+  cable.style.left = position + "px";
 
   setTimeout(() => { positionZero() }, button);
   result()
@@ -26,7 +26,7 @@ function positionZero() {
     };
 
     position -= 5;
-    square.style.left = position + "px";
+    cable.style.left = position + "px";
     result()
 
     if (position <= leftLimit) {
