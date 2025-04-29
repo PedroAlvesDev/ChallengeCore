@@ -98,3 +98,10 @@ function jogar() {
     // PARTE 6: Iniciando o jogo pela primeira vez
     carregarPergunta();
 };
+
+document.querySelectorAll(".game-btn").forEach((btn) => {
+    btn.addEventListener('click', () => {
+        const game = btn.dataset.game;
+        location.href = `${game}.html`;
+    });
+});

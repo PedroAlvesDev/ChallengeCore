@@ -123,3 +123,14 @@ p {
   font-weight: 600;
   color: white;
 }
+
+.back button {
+  color: #a1866f;
+  font-size: 2em;
+  background-color: transparent;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  cursor: pointer;
+  border: none;
+}
