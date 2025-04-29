@@ -5,10 +5,19 @@ let resultText = document.querySelector('#result');
 let escolhaJogador = "";
 let escolhaComputador = "";
 
-function jogar() {
-    content.innerHTML = '';
-    options.innerHTML = "";
+// <h2>Pra ganhar é preciso arriscar!</h2>
+// <p>PEDRA, PAPEL ou TESOURA?</p>
+// <button onclick="jogar()">Bora Jogar!</button>
 
+// function jogar() {
+    // content.innerHTML = "";
+    // options.innerHTML = "";
+
+    let h2 = document.createElement('h2');
+    h2.innerText = 'Pra ganhar é preciso arriscar!'
+
+    let p = document.createElement('p');
+    p.innerText = 'Faça sua escolha!';
 
     let buttonRock = document.createElement('button');
     buttonRock.classList.add('choise');
@@ -44,6 +53,9 @@ function jogar() {
     buttonPaper.addEventListener('click', startMatch);
     buttonScissors.addEventListener('click', startMatch);
 
+    content.appendChild(h2);
+    content.appendChild(p);
+
     buttonRock.appendChild(rock);
     rock.appendChild(rockText);
 
@@ -56,7 +68,7 @@ function jogar() {
     options.appendChild(buttonRock);
     options.appendChild(buttonPaper);
     options.appendChild(buttonScissors);
-};
+// };
 
 function startMatch(event) {
     escolhaJogador = event.currentTarget.id;
