@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <link rel="stylesheet" href="css/quiz.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -16,24 +18,24 @@
 
     <div class="topic">
         <form>
-            <select name="subject" id="">
+            <select name="subject" id="subject">
                 <option value="topics">Tópicos</option>
-                <option value="animes" id="animes">Animes</option>
-                <option value="filmes" id="filmes">Filmes</option>
-                <option value="brasil" id="brasil">História do Brasil</option>
+                <option class="topic-option" data-topic="animes">Animes</option>
+                <option class="topic-option" data-topic="filmes">Filmes</option>
+                <option class="topic-option" data-topic="historiaBrasil">História do Brasil</option>
             </select>
 
         </form>
     </div>
 
-    <div class="conteudo-jogo">
-        <section class="questionario">
-            <div class="conteudo">
-                <span class="progresso"></span>
-                <span class="pergunta"></span>
-                <div class="respostas"></div>
+    <div class="game-content">
+        <section class="game-questions">
+            <div class="content">
+                <span class="progress"></span>
+                <span class="question"></span>
+                <div class="answers"></div>
             </div>
-            <div class="fim"><span></span></div>
+            <div class="end"><span></span></div>
         </section>
     </div>
 

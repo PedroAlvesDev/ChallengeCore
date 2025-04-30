@@ -1,136 +1,143 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  /* background: url("https://i.postimg.cc/TY28jTqJ/bg4-ia.jpg") no-repeat center center fixed; */
-  background-color: #000;
-  background-size: cover;
-  font-family: "Gabarito", sans-serif;
-  margin: 20px;
-}
-
-.logo {
-  text-align: end;
-}
-
-.logo img {
-  width: 40%;
+  background: linear-gradient(270deg, #1f1f1f, #4b2e2e);
+  color: #e6c99c;
+  font-family: 'Cinzel Decorative', cursive;
+  padding: 20px;
 }
 
 /* Caixa principal do jogo */
-.conteudo-jogo {
-  background: rgba(0, 0, 0, 0.7);
-  box-shadow: 0 0 5px #ff1b7b;
-  margin: 30px;
+.game-content {
+  background-color: #3d2b2bcc;
+  border: 2px solid #a1866f;
+  border-radius: 10px;
   padding: 20px;
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.conteudo-jogo:hover {
-  background: rgba(0, 0, 0);
-  box-shadow: 0 0 5px #19caca;
+  margin: 30px auto;
+  box-shadow: 0 0 15px #a1866f;
+  max-width: 800px;
 }
 
 /* Títulos e textos */
 h2,
-p {
-  color: #f3478a;
+p,
+#result {
+  color: #e6c99c;
+  text-shadow: 0 0 5px #a1866f;
 }
 
 /* Estrutura do questionário */
-.questionario {
+.game-questions {
   display: flex;
-  justify-content: space-evenly;
   flex-direction: column;
-  width: 70%;
-  max-width: 70%;
+  gap: 20px;
+  width: 100%;
 }
 
 /* Área de conteúdo */
-.conteudo {
+.content {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  height: 100%;
   gap: 20px;
 }
 
-/* Estilo da pergunta */
-.pergunta {
-  font-weight: 600;
-  color: white;
+/* Pergunta */
+.question {
+  font-size: 1.4rem;
+  font-weight: bold;
 }
 
-/* Progresso da pergunta */
-.progresso {
-  text-align: end;
-  font-size: small;
-  font-weight: 500;
-  color: white;
+/* Progresso */
+.progress {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #e6c99c;
+  text-shadow: 0 0 3px #a1866f;
 }
 
 /* Área das respostas */
-.respostas {
+.answers {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-}
-
-/* Button Styles */
-.botao-jogar {
-  background-color: #ff1b7b;
-  border: none;
-  padding: 08px 20px;
-  font-size: 1.2em;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-/* Botões de resposta */
-.botao-resposta {
-  width: 100%;
-  height: 2.5rem;
-  text-align: start;
-  padding: 5px;
-  border: none;
-  cursor: pointer;
-  background: #ff1b7b;
-  color: white;
-}
-
-.botao-resposta:hover {
-  background: #19caca;
-  font-weight: 600;
-}
-
-/* Tela de fim do jogo */
-.fim {
-  display: none;
-  flex-direction: column;
-  align-items: center;
   gap: 10px;
 }
 
-.fim span {
-  margin-bottom: 2rem;
-  text-align: center;
-  font-weight: 600;
-  color: white;
+/* Botões de resposta */
+.answer-button {
+  background-color: #3d2b2b;
+  border: 2px solid #a1866f;
+  border-radius: 8px;
+  color: #e6c99c;
+  font-size: 1rem;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-align: left;
+}
+
+.answer-button:hover {
+  background-color: #5e3f3f;
+  transform: scale(1.03);
+  box-shadow: 0 0 8px #a1866f;
+}
+
+/* Select de tópico */
+#subject {
+  background-color: #3d2b2b;
+  border: 2px solid #a1866f;
+  color: #e6c99c;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* Ícones */
+i:hover {
+  color: #e6c99c;
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* Tela final */
+.end {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: #e6c99c;
+}
+
+.end span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 0 0 5px #a1866f;
+}
+
+/* Botão de voltar */
+.back {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .back button {
+  background: none;
+  border: none;
   color: #a1866f;
-  font-size: 2em;
-  background-color: transparent;
-  display: flex;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
   position: fixed;
   bottom: 0;
-  cursor: pointer;
-  border: none;
+}
+
+.back button:hover {
+  color: #e6c99c;
+  text-shadow: 0 0 10px #a1866f;
 }
