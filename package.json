@@ -1,0 +1,15 @@
+{
+  "name": "challengecore",
+  "version": "1.0.0",
+  "description": "**ChallengeCore** é uma coleção de minigames interativos desenvolvidos com foco em lógica, interatividade e diversão. Este projeto foi criado como um desafio pessoal e para fins de estudo em desenvolvimento Front-End com JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
