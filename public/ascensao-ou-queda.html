@@ -15,14 +15,26 @@
     <main class="conteudo-jogo">
         <div id="container">
             <h2>Escolha 3 jogadores para seu time:</h2>
+            <input type="text" name="player" id="player" placeholder="Jogador:">
+            <button onclick="escolhaJogador()">Add Jogador</button>
+
 
             <p id="informacoesJogador" class="resultado"></p>
             <p id="informacoesComputador" class="resultado"></p>
             <button id="resultadoBtn" style="display: none;">Ver Resultado</button>
             <h1 id="resultadoFinal" class="resultado"></h1>
-            <button onclick="jogar()">Bora Jogar!</button>
+            <!-- <button onclick="jogar()">Bora Jogar!</button> -->
 
         </div>
+
+        <div class="team">
+            <h2>Time Jogador</h2>
+
+            <label class="namePlayer">
+                <p>Anakin</p>
+            </label>
+        </div>
+
     </main>
 
     <div class="back">

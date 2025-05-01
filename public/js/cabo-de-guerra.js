@@ -42,6 +42,7 @@ function result() {
   } else if (position <= leftLimit) {
     statusText.textContent = "💀 Você Perdeu !!!"
     gameOver = true;
+    restart();
   };
 };
 
