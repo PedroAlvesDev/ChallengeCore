@@ -1,59 +1,81 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #4b2e2e;
+  background-color: #1f1f1f;
+  background-image: url(/public/assets/images/ChatGPT-hero-vs-vilain-vertical.png);
   background-size: cover;
-  font-family: "Gabarito", sans-serif;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Cinzel Decorative', cursive;
   margin: 20px;
-  color: #fff;
+  color: #e6c99c;
 }
 
-.logo {
-  text-align: end;
+#container {
+  display: flex;
+  justify-content: center;
 }
 
-.logo img {
-  width: 40%;
+#container input {
+  padding: 10px 20px;
+  margin: 10px;
+  border: 2px solid #a1866f;
+  background: #3d2b2b;
+  color: #e6c99c;
+  font-family: 'Cinzel Decorative', cursive;
+  border-radius: 8px;
+  width: max-content;
 }
 
-/* Caixa principal do jogo */
+#container button {
+  width: max-content;
+  height: auto;
+}
+
 .conteudo-jogo {
-  background: rgba(0, 0, 0, 0.7);
-  box-shadow: 0 0 5px #ff1b7b;
+  background: rgba(31, 17, 17, 0.8);
+  box-shadow: 0 0 15px #a1866f;
+  border: 2px solid #a1866f;
   margin: 30px;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-top: 2rem;
+  align-items: center;
+  border-radius: 12px;
+  transition: 0.3s ease;
 }
 
 .conteudo-jogo:hover {
-  background: rgba(0, 0, 0);
-  box-shadow: 0 0 5px #19caca;
+  background: rgba(31, 17, 17, 0.95);
+  box-shadow: 0 0 25px #e6c99c;
 }
 
-/* Títulos e textos */
 h2,
 p {
-  color: white;
+  color: #e6c99c;
+  text-shadow: 0 0 5px #a1866f;
 }
 
 button {
   padding: 10px 20px;
   margin: 10px;
-  border: none;
-  background: #ff1b7b;
-  color: white;
+  border: 2px solid #a1866f;
+  background: #3d2b2b;
+  color: #e6c99c;
+  font-family: 'Cinzel Decorative', cursive;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background: #19caca;
+  background: #a1866f;
+  color: #1f1f1f;
+  font-weight: bold;
 }
 
 .back button {
@@ -63,13 +85,57 @@ button:hover {
   display: flex;
   position: fixed;
   bottom: 0;
+  border: none;
 }
 
-.team h2 {
-  color: #fff;
+.teams {
+  display: flex;
+  justify-content: center;
+  color: #e6c99c;
+  gap: 50px;
+}
+
+.teamPlayer,
+.teamVilain {
+  display: flex;
+  flex-direction: column;
 }
 
 .namePlayer {
-  color: #fff;
+  color: #e6c99c;
+  text-shadow: 0 0 3px #a1866f;
+  padding: 5px 0;
+}
 
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 2rem;
+}
+
+.result img {
+  max-width: 100vh;
+  max-height: 100vh;
+  border: 2px solid #a1866f;
+  border-radius: 10px;
+}
+
+.result p {
+  width: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #e6c99c;
+  text-shadow: 0 0 10px #a1866f;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+@media (min-width: 1200px) {
+  body {
+    background-image: url(/public/assets/images/ChatGPT-hero-vs-vilain.png);
+  }
 }
