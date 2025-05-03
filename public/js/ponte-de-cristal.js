@@ -1,22 +1,51 @@
-function jogar() {
-    let ganhou = 0;
 
-    for (let rodada = 1; rodada <= 3; rodada++) {
-        let escolhaJogador = prompt(`Nível ${rodada}, vidro (1, 2 ou 3)?`);
-        let pisoQuebrado = Math.floor(Math.random() * 3) + 1;
+let winner = true;
 
-        if (escolhaJogador == pisoQuebrado) {
-            alert(`O vidro quebrou ! Acabou pra você`);
-            ganhou = 1;
-            break;
-        } else {
-            alert(`Você passou ! O piso quebrado estava na ponte ${pisoQuebrado}`);
+function checkFloor(event) {
+    const btn = event.currentTarget;
+    const playerChoice = parseInt(btn.dataset.pos);
+    const round = parseInt(btn.closest('.floor').dataset.round);
+
+    const brokenFloor = Math.floor(Math.random() * 3) + 1;
+
+    console.log(`Andar ${round} | Escolha: ${playerChoice} | Piso Quebrado: ${brokenFloor}`);
+
+    if (playerChoice === brokenFloor) {
+        console.log(`O vidro quebrou ! Acabou pra você`);
+        btn.style.backgroundColor = "red";
+        btn.innerText = "Quebrou!!!"
+        winner = false;
+        disableButtons();
+    } else {
+        btn.style.backgroundColor = "green";
+        btn.innerText = "Seguro!!!";
+        console.log(`Você passou ! O piso quebrado estava na ponte ${brokenFloor}`);
+        disabledFloor(event);
+        if (round === 5) {
+            if (winner) {
+                disableButtons();
+                console.log(`Parabéns! Você ganhou!!!`);
+            };
         };
     };
+};
 
-    if (ganhou == 0) {
-        alert(`Parabéns! Você ganhou!!!`);
-    };
+function disabledFloor(event) {
+    const round = event.currentTarget.closest('.floor');
+    round.querySelectorAll('button').forEach(btn => btn.disabled = true);
+};
+
+function disableButtons() {
+    document.querySelectorAll('.btnFloor').forEach(btn => btn.disabled = true);
+};
+
+function restart() {
+    winner = true;
+    document.querySelectorAll('.btnFloor').forEach(btn => {
+        btn.disabled = false;
+        btn.innerText = `Painel ${btn.dataset.pos}`;
+        btn.style.backgroundColor = "";
+    });
 };
 
 document.querySelectorAll(".game-btn").forEach((btn) => {

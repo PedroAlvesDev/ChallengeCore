@@ -6,21 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ponte de Cristal</title>
     <link rel="stylesheet" href="css/ponte-cristal.css">
+    <script src="https://kit.fontawesome.com/2be6686047.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
+    <div class="title">
+        <h2>Ponte de Cristal</h2>
+        <p>A cada passo, a coragem é testada. Escolha com sabedoria... ou caia na escuridão.</p>
+    </div>
     <div class="container">
-        <div class="content">
-            <h2>Pra ganhar, é preciso coragem!</h2>
-            <p>Até mesmo para pisar em um chão feito de vidro!</p>
-            <button onclick="jogar()">Bora Jogar!</button>
+        <div class="glassBridge">
+            <div class="floor" data-round="1">
+                <button class="btnFloor" data-pos="1" onclick="checkFloor(event)">Painel 1</button>
+                <button class="btnFloor" data-pos="2" onclick="checkFloor(event)">Painel 2</button>
+                <button class="btnFloor" data-pos="3" onclick="checkFloor(event)">Painel 3</button>
+            </div>
+            <div class="floor" data-round="2">
+                <button class="btnFloor" data-pos="1" onclick="checkFloor(event)">Painel 1</button>
+                <button class="btnFloor" data-pos="2" onclick="checkFloor(event)">Painel 2</button>
+                <button class="btnFloor" data-pos="3" onclick="checkFloor(event)">Painel 3</button>
+            </div>
+            <div class="floor" data-round="3">
+                <button class="btnFloor" data-pos="1" onclick="checkFloor(event)">Painel 1</button>
+                <button class="btnFloor" data-pos="2" onclick="checkFloor(event)">Painel 2</button>
+                <button class="btnFloor" data-pos="3" onclick="checkFloor(event)">Painel 3</button>
+            </div>
+            <div class="floor" data-round="4">
+                <button class="btnFloor" data-pos="1" onclick="checkFloor(event)">Painel 1</button>
+                <button class="btnFloor" data-pos="2" onclick="checkFloor(event)">Painel 2</button>
+                <button class="btnFloor" data-pos="3" onclick="checkFloor(event)">Painel 3</button>
+            </div>
+            <div class="floor" data-round="5">
+                <button class="btnFloor" data-pos="1" onclick="checkFloor(event)">Painel 1</button>
+                <button class="btnFloor" data-pos="2" onclick="checkFloor(event)">Painel 2</button>
+                <button class="btnFloor" data-pos="3" onclick="checkFloor(event)">Painel 3</button>
+            </div>
         </div>
     </div>
 
-    <div class="glassBridge"></div>
-
     <div class="back">
         <button class="game-btn" data-game="index">Voltar</button>
+        <button class="restart" onclick="restart()">
+            <i class="fa-solid fa-repeat"></i>
+        </button>
     </div>
 
     <script src="js/ponte-de-cristal.js"></script>
