@@ -84,6 +84,16 @@ function battleResult() {
     };
 };
 
+function restart() {
+    personagem = [];
+    viloes = ["", "", ""];
+    forcaPersonagem = 0;
+    forcaViloes = 0;
+
+    result.innerText = "";
+    img.src = "";
+};
+
 document.querySelectorAll(".game-btn").forEach((btn) => {
     btn.addEventListener('click', () => {
         const game = btn.dataset.game;

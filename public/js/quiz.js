@@ -5,7 +5,7 @@ const finalText = document.querySelector(".end span");
 const content = document.querySelector(".content");
 const finalContent = document.querySelector(".end");
 
-let perguntas = [];
+let questions = [];
 
 fetch('perguntas.json')
     .then(res => res.json())
@@ -17,68 +17,85 @@ fetch('perguntas.json')
             const topic = selectedOption.dataset.topic;
 
             if (topic && data[topic]) {
-                perguntas = data[topic];
-                iniciarQuiz();
+                startQuiz(data[topic]);
             }
         });
         console.log(data);
     })
     .catch(err => console.error('Erro ao carregar perguntas:', err));
 
-// PARTE 3: Variáveis para controle do jogo
-let indiceAtual = 0;
-let acertos = 0;
+let indexCurrent = 0;
+let hits = 0;
 
-async function carregarPerguntas(topic) {
+async function loadQuestions(topic) {
     const response = await fetch('perguntas.json');
     const data = await response.json();
-    const perguntasTopico = data[topic];
+    const questionsTopic = data[topic];
 
-    iniciarQuiz(perguntasTopico)
+    startQuiz(questionsTopic)
 }
 
-// PARTE 4: Função para carregar uma nova pergunta
-function iniciarQuiz() {
-    progressElement.innerHTML = `${indiceAtual + 1}/${perguntas.length}`;
+function startQuiz(questionsTopic) {
+    questions = questionsTopic;
+    indexCurrent = 0;
+    hits = 0;
 
-    const perguntaAtual = perguntas[indiceAtual];
-    questionElement.innerHTML = perguntaAtual.pergunta;
+    content.style.display = "block";
+    finalContent.style.display = "none";
+
+    showQuestion();
+};
+
+function showQuestion() {
+    progressElement.innerHTML = `${indexCurrent + 1}/${questions.length}`;
+
+    const currentQuestion = questions[indexCurrent];
+    questionElement.innerHTML = currentQuestion.pergunta;
 
     answersElement.innerHTML = "";
 
-    // Percorre todas as respostas da pergunta atual
-    for (let i = 0; i < perguntaAtual.respostas.length; i++) {
-        const answer = perguntaAtual.respostas[i];
+    for (let i = 0; i < currentQuestion.respostas.length; i++) {
+        const answer = currentQuestion.respostas[i];
         const btn = document.createElement("button");
         btn.classList.add("answer-button");
         btn.innerText = answer.opcao;
-        btn.onclick = function () {
-            // Se a resposta for correta (resposta.correto === true), incrementa o número de acertos
-            if (answer.correto) {
-                acertos++;
-            };
-            indiceAtual++;
 
-            if (indiceAtual < perguntas.length) {
-                carregarPerguntas();
+        btn.onclick = () => {
+            if (answer.correto) hits++;
+            indexCurrent++;
+
+            if (indexCurrent < questions.length) {
+                showQuestion();
             } else {
-                finalizarJogo();
+                finishGame();
             };
         };
-        // Adiciona o botão de resposta à tela, dentro do elemento 'respostasElemento'
         answersElement.appendChild(btn);
     };
 };
 
-// PARTE 5: Função para mostrar a tela final
-function finalizarJogo() {
-    finalText.innerHTML = `Você acertou ${acertos} de ${perguntas.length}`;
+function finishGame() {
+    finalText.innerHTML = `Você acertou ${hits} de ${questions.length}`;
     content.style.display = "none";
     finalContent.style.display = "flex";
 };
 
-// PARTE 6: Iniciando o jogo pela primeira vez
-carregarPerguntas();
+function restart() {
+    indexCurrent = 0;
+    hits = 0;
+
+    content.style.display = "none";
+    finalContent.style.display = "none";
+
+    const selectElement = document.getElementById('subject');
+    selectElement.selectedIndex = 0;
+
+    questionElement.innerHTML = "";
+    answersElement.innerHTML = "";
+    progressElement.innerHTML = "";
+
+    questions = [];
+};
 
 document.querySelectorAll(".game-btn").forEach((btn) => {
     btn.addEventListener('click', () => {

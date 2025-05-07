@@ -1,13 +1,12 @@
-  * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background: url('https://www.transparenttextures.com/patterns/brushed-alum.png');
-    background-color: #2c2c2c;
-    color: #e0dede;
+    background-color: #1f1f1f;
+    color: #e6c99c;
     font-family: 'Cinzel', serif;
     min-height: 100vh;
     overflow-x: hidden;
@@ -20,20 +19,20 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 3rem 1rem;
-    background: rgba(25, 25, 35, 0.85);
-    border-bottom: 2px solid #755b3b;
-    box-shadow: 0 4px 15px rgba(117, 91, 59, 0.5);
+    background: rgba(31, 31, 31, 0.85);
+    border-bottom: 2px solid #4b2e2e;
+    box-shadow: 0 4px 15px rgba(75, 46, 46, 0.5);
 }
 
 .title h1 {
     font-size: 2.8rem;
-    color: #c3aa82;
-    text-shadow: 1px 1px 8px #3b2e26;
+    color: #e6c99c;
+    text-shadow: 1px 1px 8px #3d2b2b;
 }
 
 .title h2 {
     font-size: 1.3rem;
-    color: #9da0a6;
+    color: #a1866f;
     font-weight: 400;
 }
 
@@ -43,7 +42,7 @@ body {
     align-items: center;
     gap: 2rem;
     padding: 4rem 2rem;
-    background: linear-gradient(to right, rgba(30, 30, 47, 0.95), rgba(12, 12, 20, 0.95));
+    background: linear-gradient(to right, rgba(75, 46, 46, 0.95), rgba(31, 31, 31, 0.95));
 }
 
 .mini_games {
@@ -55,8 +54,8 @@ body {
 }
 
 .menu button {
-    background: linear-gradient(to right, #3a2f2a, #1e1a17);
-    color: #d0b484;
+    background: linear-gradient(to right, #4b2e2e, #3d2b2b);
+    color: #e6c99c;
     border: 2px solid #a1866f;
     padding: 1rem 2rem;
     font-size: 1.1rem;
@@ -64,20 +63,18 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(255, 230, 200, 0.1);
-    clip-path: polygon(
-        5% 0%, 10% 5%, 15% 0%, 20% 5%, 25% 0%, 30% 5%, 35% 0%,
-        40% 5%, 45% 0%, 50% 5%, 55% 0%, 60% 5%, 65% 0%, 70% 5%,
-        75% 0%, 80% 5%, 85% 0%, 90% 5%, 95% 0%, 100% 5%, 100% 95%,
-        95% 100%, 90% 95%, 85% 100%, 80% 95%, 75% 100%, 70% 95%,
-        65% 100%, 60% 95%, 55% 100%, 50% 95%, 45% 100%, 40% 95%,
-        35% 100%, 30% 95%, 25% 100%, 20% 95%, 15% 100%, 10% 95%,
-        5% 100%, 0% 95%, 0% 5%
-    );
+    box-shadow: 0 0 10px rgba(230, 201, 156, 0.1);
+    clip-path: polygon(5% 0%, 10% 5%, 15% 0%, 20% 5%, 25% 0%, 30% 5%, 35% 0%,
+            40% 5%, 45% 0%, 50% 5%, 55% 0%, 60% 5%, 65% 0%, 70% 5%,
+            75% 0%, 80% 5%, 85% 0%, 90% 5%, 95% 0%, 100% 5%, 100% 95%,
+            95% 100%, 90% 95%, 85% 100%, 80% 95%, 75% 100%, 70% 95%,
+            65% 100%, 60% 95%, 55% 100%, 50% 95%, 45% 100%, 40% 95%,
+            35% 100%, 30% 95%, 25% 100%, 20% 95%, 15% 100%, 10% 95%,
+            5% 100%, 0% 95%, 0% 5%);
 }
 
 .menu button:hover {
-    background: linear-gradient(to right, #a1866f, #755b3b);
-    color: #1e1e2f;
-    box-shadow: 0 0 20px rgba(255, 220, 150, 0.5);
+    background: linear-gradient(to right, #a1866f, #4b2e2e);
+    color: #1f1f1f;
+    box-shadow: 0 0 20px rgba(230, 201, 156, 0.5);
 }

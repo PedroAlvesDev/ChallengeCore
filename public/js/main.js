@@ -4,9 +4,3 @@ document.querySelectorAll(".game-btn").forEach((btn) => {
         location.href = `${game}.html`;
     });
 });
-
-// document.querySelector('#back').forEach((btn) => {
-//     btn.addEventListener('click', () => {
-//     location.href = `index.html`;
-//     })
-// })

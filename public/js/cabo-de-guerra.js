@@ -4,7 +4,7 @@ const statusText = document.getElementById("status");
 let position = 0;
 let gameOver = false;
 
-const startingPosition = 0;
+// const startingPosition = 0;
 const leftLimit = -100;
 const rightLimit = 100;
 
@@ -42,8 +42,14 @@ function result() {
   } else if (position <= leftLimit) {
     statusText.textContent = "💀 Você Perdeu !!!"
     gameOver = true;
-    restart();
   };
+};
+
+function restart() {
+  gameOver = false;
+  statusText.innerText = "";
+  position = 0;
+  cable.style.left = position + "px";
 };
 
 document.querySelectorAll(".game-btn").forEach((btn) => {

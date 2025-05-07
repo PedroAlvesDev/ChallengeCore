@@ -5,8 +5,8 @@
 }
 
 body {
-  background-image: url(/public/assets/images/Gemini-Ponte-de-Cristal.jpeg);
-  background-size: cover;
+  background-image: url(/assets/images/Ponte-de-Cristal-vertical.png);
+  background-size: contain;
   background-position: center;
   background-color: #1f1b24;
   font-family: 'Gabarito', sans-serif;
@@ -14,19 +14,6 @@ body {
   position: relative;
   min-height: 100vh;
   padding: 20px;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 30px;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  border: 2px solid #a1866f;
-  border-radius: 16px;
-  box-shadow: 0 0 20px #ff1b7b77;
 }
 
 .title {
@@ -44,6 +31,33 @@ body {
   font-size: 2em;
   color: #e6c99c;
   text-shadow: 0 0 8px #a1866f;
+}
+
+.title p {
+  color: #e6c99c;
+  font-size: 1.2em;
+  text-shadow: 0 0 5px #a1866f;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #a1866f;
+  border-radius: 16px;
+  box-shadow: 0 0 20px #ff1b7b77;
+}
+
+.result {
+  color: #e6c99c;
+  font-size: 1.2em;
+  text-shadow: 0 0 5px #a1866f;
+  text-align: center;
 }
 
 .glassBridge {
@@ -85,15 +99,20 @@ body {
 
 .back button {
   color: #e6c99c;
-  font-size: 1.5em;
+  font-size: 2em;
   background-color: transparent;
   border: none;
   cursor: pointer;
-  text-shadow: 0 0 5px #ff1b7b;
+  text-shadow: 0 0 5px #a1866f;
   transition: transform 0.3s ease;
 }
 
 .back button:hover {
   transform: scale(1.1);
-  color: #19caca;
+}
+
+@media (min-width: 1200px) {
+  body {
+    background-image: url(/assets/images/Ponte-de-Cristal.png);
+  }
 }

@@ -1,4 +1,4 @@
-
+let result = document.querySelector('.result');
 let winner = true;
 
 function checkFloor(event) {
@@ -16,6 +16,10 @@ function checkFloor(event) {
         btn.innerText = "Quebrou!!!"
         winner = false;
         disableButtons();
+
+        result.innerText = "O vidro se partiu… e com ele, sua última esperança. A queda foi inevitável.";
+        result.style.marginBottom = "20px";
+
     } else {
         btn.style.backgroundColor = "green";
         btn.innerText = "Seguro!!!";
@@ -25,6 +29,9 @@ function checkFloor(event) {
             if (winner) {
                 disableButtons();
                 console.log(`Parabéns! Você ganhou!!!`);
+
+                result.innerText = "Você venceu a escuridão com passos firmes. A coragem brilhou mais forte que o medo.";
+                result.style.marginBottom = "20px";
             };
         };
     };
@@ -45,6 +52,8 @@ function restart() {
         btn.disabled = false;
         btn.innerText = `Painel ${btn.dataset.pos}`;
         btn.style.backgroundColor = "";
+        result.innerText = "";
+        result.style.marginBottom = "";
     });
 };
 
