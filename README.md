@@ -1,44 +1,56 @@
+🕹️ Projeto ChallengeCore
 
-# 🎮 ChallengeCore
+Este projeto é uma coletânea de mini-jogos temáticos inspirados em universos como Star Wars e Arcane, desenvolvidos com foco em aprendizado de JavaScript, HTML e CSS.
 
-**ChallengeCore** é uma coleção de minigames interativos desenvolvidos com foco em lógica, interatividade e diversão. Este projeto foi criado como um desafio pessoal e para fins de estudo em desenvolvimento Front-End com JavaScript.
+🎮 Mini-jogos disponíveis
 
-## 🕹️ Jogos incluídos
+Pedra, papel ou tesoura
 
-- ✊🖐✌ **Pedra, Papel ou Tesoura**  
-  Clássico duelo de escolhas em tempo real!
+Ponte de Cristal
 
-- 🌉 **Ponte de Cristal**  
-  Inspirado em jogos de sobrevivência: escolha o caminho certo... ou caia!
+Cabo de Guerra
 
-- 💪 **Cabo de Guerra**  
-  Teste sua velocidade de clique e vença a disputa de força.
+Ascensão ou Queda
 
-- ❓ **Quiz de Perguntas e Respostas**  
-  Um desafio para o cérebro! Acerte o máximo de perguntas que conseguir.
+Quiz (Animes, Filmes, História do Brasil)
 
-- 🌌 **Ascensão ou Queda**  
-  Inspirado em Star Wars! Escolha 3 personagens e enfrente o destino: a Força definirá quem sobe... ou cai.
+🚀 Como instalar e rodar o projeto localmente
 
-## 💻 Tecnologias utilizadas
+1. Requisitos
 
-- HTML5  
-- CSS3  
-- JavaScript (Vanilla JS)
+Ter o Node.js instalado (versão 16 ou superior).
+→ Baixar Node.js - https://nodejs.org/pt
 
-## 🚀 Objetivo
+2. Baixar o projeto
 
-Este projeto tem como objetivo:
+Você pode:
 
-- Praticar lógica de programação com JavaScript puro.
-- Trabalhar com manipulação do DOM, eventos e estados.
-- Criar uma coleção de jogos simples e divertidos, de fácil acesso via navegador.
-- Servir como portfólio para estudo e compartilhamento nas redes sociais.
+Baixar o arquivo .zip do projeto e extrair em uma pasta
 
-## 📌 Status
+Ou clonar via Git:
 
-🚧 Em desenvolvimento...
+git clone https://github.com/PedroAlvesDev/ChallengeCore.git
 
----
+3. Instalar dependências
+
+No terminal, dentro da pasta do projeto:
+
+npm install
+
+4. Rodar o servidor
+
+Comando para iniciar o servidor local:
+
+node server.js
+
+5. Acessar o projeto no navegador
+
+Abra o navegador e acesse:
+
+http://localhost:3000
+
+📃 Licença
+
+Este projeto é apenas para fins de estudo e não possui licença de uso comercial.
 
 Feito com 💙 por **Anakin**

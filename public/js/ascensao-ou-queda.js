@@ -18,6 +18,13 @@ function escolhaJogador() {
         alert(`Nenhum jogador válido!`);
     }
 
+    if (personagem.length < 1) {
+        let h2 = document.createElement('h2');
+        h2.innerText = "Time Jogador";
+        teamPlayer.appendChild(h2);
+    };
+
+
     if (personagem.length < 3) {
         let labelPlayer = document.createElement('label');
         labelPlayer.classList.add('namePlayer');
@@ -50,6 +57,10 @@ function strengthLevelVillain() {
     forcaViloes = 0;
     let viloesPossiveis = ["Thanos", "Lex Luthor", "Voldemort", "Bellatrix Lestrange", "Harley Quinn", "Cruella De Vil", "Duende Verde", "Big Mom", "Malévola", "Scar"];
 
+    let h2 = document.createElement('h2');
+    h2.innerText = "Time Vilões";
+    teamVilain.appendChild(h2);
+
     for (let i = 0; i < 3; i++) {
         let indiceAleatorio = Math.floor(Math.random() * viloesPossiveis.length);
         viloes[i] = viloesPossiveis[indiceAleatorio];
@@ -70,17 +81,17 @@ function battleResult() {
     if (forcaPersonagem > forcaViloes) {
         img.src = "assets/images/ChatGPT-Vitória.png";
 
-        result.innerText = `Seu time é muito forte! \n Você ganhou a disputa de força ! Sua força foi ${forcaPersonagem}`;
+        result.innerText = `A força brilhou intensamente em seu time!\n Vocês dominaram a disputa com poder absoluto: ${forcaPersonagem}!`;
 
     } else if (forcaViloes > forcaPersonagem) {
         img.src = "assets/images/ChatGPT-Derrota.png";
 
-        result.innerText = `Seu time não foi forte o suficiente.\n O time dos vilões ganharam a disputa com força de ${forcaViloes}`;
+        result.innerText = `A sombra falou mais alto...\n Os vilões esmagaram a esperança com sua força avassaladora: ${forcaViloes}!`;
 
     } else {
         img.src = "assets/images/ChatGPT-hero-vs-vilain-empate.png";
 
-        result.innerText = `Os dois times possuem o mesmo nivel de força!\n Vocês empataram !!!`;
+        result.innerText = `Dois lados... um só poder.\n O equilíbrio da força se manteve. Nenhum vencedor hoje!`;
     };
 };
 
@@ -89,6 +100,9 @@ function restart() {
     viloes = ["", "", ""];
     forcaPersonagem = 0;
     forcaViloes = 0;
+
+    teamPlayer.innerText = "";
+    teamVilain.innerText = "";
 
     result.innerText = "";
     img.src = "";

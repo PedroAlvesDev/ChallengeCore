@@ -4,7 +4,6 @@ const statusText = document.getElementById("status");
 let position = 0;
 let gameOver = false;
 
-// const startingPosition = 0;
 const leftLimit = -100;
 const rightLimit = 100;
 
@@ -37,10 +36,10 @@ function positionZero() {
 
 function result() {
   if (position >= rightLimit) {
-    statusText.textContent = "🏆 Você Venceu !!!"
+    statusText.innerHTML = "Com cada puxão, escreveram sua glória. <br>A vitória é de vocês no cabo de guerra!"
     gameOver = true;
   } else if (position <= leftLimit) {
-    statusText.textContent = "💀 Você Perdeu !!!"
+    statusText.innerHTML = "Foram fortes... mas não o bastante. <br>Hoje, vocês foram arrastados pela derrota."
     gameOver = true;
   };
 };

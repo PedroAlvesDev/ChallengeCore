@@ -20,7 +20,6 @@ fetch('perguntas.json')
                 startQuiz(data[topic]);
             }
         });
-        console.log(data);
     })
     .catch(err => console.error('Erro ao carregar perguntas:', err));
 

@@ -8,10 +8,8 @@ function checkFloor(event) {
 
     const brokenFloor = Math.floor(Math.random() * 3) + 1;
 
-    console.log(`Andar ${round} | Escolha: ${playerChoice} | Piso Quebrado: ${brokenFloor}`);
 
     if (playerChoice === brokenFloor) {
-        console.log(`O vidro quebrou ! Acabou pra você`);
         btn.style.backgroundColor = "red";
         btn.innerText = "Quebrou!!!"
         winner = false;
@@ -23,12 +21,10 @@ function checkFloor(event) {
     } else {
         btn.style.backgroundColor = "green";
         btn.innerText = "Seguro!!!";
-        console.log(`Você passou ! O piso quebrado estava na ponte ${brokenFloor}`);
         disabledFloor(event);
         if (round === 5) {
             if (winner) {
                 disableButtons();
-                console.log(`Parabéns! Você ganhou!!!`);
 
                 result.innerText = "Você venceu a escuridão com passos firmes. A coragem brilhou mais forte que o medo.";
                 result.style.marginBottom = "20px";

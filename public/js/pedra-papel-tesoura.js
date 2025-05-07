@@ -5,110 +5,90 @@ let resultText = document.querySelector('#result');
 let escolhaJogador = "";
 let escolhaComputador = "";
 
-// <h2>Pra ganhar é preciso arriscar!</h2>
-// <p>PEDRA, PAPEL ou TESOURA?</p>
-// <button onclick="jogar()">Bora Jogar!</button>
+let h2 = document.createElement('h2');
+h2.innerText = 'Pra ganhar é preciso arriscar!'
 
-// function jogar() {
-    // content.innerHTML = "";
-    // options.innerHTML = "";
+let p = document.createElement('p');
+p.innerText = 'Faça sua escolha!';
 
-    let h2 = document.createElement('h2');
-    h2.innerText = 'Pra ganhar é preciso arriscar!'
+let buttonRock = document.createElement('button');
+buttonRock.classList.add('choise');
+buttonRock.id = "rock";
 
-    let p = document.createElement('p');
-    p.innerText = 'Faça sua escolha!';
+let rock = document.createElement('i');
+rock.classList.add('fa-solid', 'fa-hand-back-fist');
 
-    let buttonRock = document.createElement('button');
-    buttonRock.classList.add('choise');
-    buttonRock.id = "rock";
+let rockText = document.createElement('p');
+rockText.innerText = 'Pedra';
 
-    let rock = document.createElement('i');
-    rock.classList.add('fa-solid', 'fa-hand-back-fist');
+let buttonPaper = document.createElement('button');
+buttonPaper.classList.add('choise');
+buttonPaper.id = "paper";
 
-    let rockText = document.createElement('p');
-    rockText.innerText = 'Pedra';
+let paper = document.createElement('i');
+paper.classList.add('fa-solid', 'fa-hand');
 
-    let buttonPaper = document.createElement('button');
-    buttonPaper.classList.add('choise');
-    buttonPaper.id = "paper";
+let paperText = document.createElement('p');
+paperText.innerText = 'Papel';
 
-    let paper = document.createElement('i');
-    paper.classList.add('fa-solid', 'fa-hand');
+let buttonScissors = document.createElement('button');
+buttonScissors.classList.add('choise');
+buttonScissors.id = "scissors";
 
-    let paperText = document.createElement('p');
-    paperText.innerText = 'Papel';
+let scissors = document.createElement('i');
+scissors.classList.add('fa-solid', 'fa-hand-scissors');
 
-    let buttonScissors = document.createElement('button');
-    buttonScissors.classList.add('choise');
-    buttonScissors.id = "scissors";
+let scissorsText = document.createElement('p');
+scissorsText.innerText = 'Tesoura';
 
-    let scissors = document.createElement('i');
-    scissors.classList.add('fa-solid', 'fa-hand-scissors');
+buttonRock.addEventListener('click', startMatch);
+buttonPaper.addEventListener('click', startMatch);
+buttonScissors.addEventListener('click', startMatch);
 
-    let scissorsText = document.createElement('p');
-    scissorsText.innerText = 'Tesoura';
+content.appendChild(h2);
+content.appendChild(p);
 
-    buttonRock.addEventListener('click', startMatch);
-    buttonPaper.addEventListener('click', startMatch);
-    buttonScissors.addEventListener('click', startMatch);
+buttonRock.appendChild(rock);
+rock.appendChild(rockText);
 
-    content.appendChild(h2);
-    content.appendChild(p);
+buttonPaper.appendChild(paper);
+paper.appendChild(paperText);
 
-    buttonRock.appendChild(rock);
-    rock.appendChild(rockText);
+buttonScissors.appendChild(scissors);
+scissors.appendChild(scissorsText);
 
-    buttonPaper.appendChild(paper);
-    paper.appendChild(paperText);
-
-    buttonScissors.appendChild(scissors);
-    scissors.appendChild(scissorsText);
-
-    options.appendChild(buttonRock);
-    options.appendChild(buttonPaper);
-    options.appendChild(buttonScissors);
-// };
+options.appendChild(buttonRock);
+options.appendChild(buttonPaper);
+options.appendChild(buttonScissors);
 
 function startMatch(event) {
     escolhaJogador = event.currentTarget.id;
-    console.log('Jogador', escolhaJogador);
-    
+
     let escPosComputador = ["rock", "paper", "scissors"];
     escolhaComputador = escPosComputador[Math.floor(Math.random() * 3)];
-    console.log('Computador', escolhaComputador);
 
     result();
 };
 
 function result() {
     if (escolhaJogador == escolhaComputador) {
-        console.log('Empate!!!');
         resultText.innerText = "Empate!!!";
-
-
     } else if (escolhaJogador == 'rock') {
         if (escolhaComputador == 'paper') {
-            console.log('Computador venceu, escolheu Papel!');
             resultText.innerText = "Computador venceu, escolheu Papel!";
         } else if (escolhaComputador == 'scissors') {
-            console.log('Jogador venceu, computador jogou tesoura!');
             resultText.innerText = "Jogador venceu, computador jogou tesoura!";
         };
     } else if (escolhaJogador == 'paper') {
         if (escolhaComputador == 'rock') {
-            console.log('jogador venceu, computador jogou pedra!');
-            resultText.innerText = "jogador venceu, computador jogou pedra!";
+            resultText.innerText = "Jogador venceu, computador jogou pedra!";
         } else if (escolhaComputador == 'scissors') {
-            console.log('Computador venceu, escolheu tesoura!');
             resultText.innerText = "Computador venceu, escolheu tesoura!";
         };
     } else if (escolhaJogador == 'scissors') {
         if (escolhaComputador == 'rock') {
-            console.log('Computador venceu, escolheu pedra!');
             resultText.innerText = "Computador venceu, escolheu pedra!";
         } else if (escolhaComputador == 'paper') {
-            console.log('Jogador venceu, computador jogou papel!');
             resultText.innerText = "Jogador venceu, computador jogou papel!";
         };
     };
@@ -120,6 +100,6 @@ document.querySelectorAll(".game-btn").forEach((btn) => {
         location.href = `${game}.html`;
     });
 });
-    
+
 // Pedra [1] Papel [2], Tesoura [3]'
 // rock [1] paper [2], scissors [3]'

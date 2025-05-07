@@ -78,16 +78,6 @@ button:hover {
   font-weight: bold;
 }
 
-/* .back button {
-  color: #a1866f;
-  font-size: 2em;
-  background-color: transparent;
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  border: none;
-} */
-
 .back {
   display: flex;
   justify-content: center;
@@ -113,9 +103,7 @@ button:hover {
   text-shadow: 0 0 10px #a1866f;
   transform: scale(1.1);
   transition: transform 0.3s ease;
-
 }
-
 
 .teams {
   display: flex;
