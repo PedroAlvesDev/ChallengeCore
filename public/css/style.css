@@ -1,3 +1,26 @@
+:root {
+    --color-bg: #1f1f1f;
+    --color-primary: #e6c99c;
+    --color-secondary: #a1866f;
+    --color-accent-dark: #4b2e2e;
+    --color-accent-mid: #3d2b2b;
+    --color-shadow: rgba(75, 46, 46, 0.5);
+    --color-shadow-light: rgba(230, 201, 156, 0.1);
+    --color-shadow-strong: rgba(230, 201, 156, 0.5);
+    --font-title: 'Cinzel', serif;
+    --gradient-bg: linear-gradient(to right, rgba(75, 46, 46, 0.95), rgba(31, 31, 31, 0.95));
+    --gradient-button: linear-gradient(to right, var(--color-accent-dark), var(--color-accent-mid));
+    --gradient-button-hover: linear-gradient(to right, var(--color-secondary), var(--color-accent-dark));
+    --border-default: 2px solid var(--color-secondary);
+    --clip-zigzag: polygon(5% 0%, 10% 5%, 15% 0%, 20% 5%, 25% 0%, 30% 5%, 35% 0%,
+            40% 5%, 45% 0%, 50% 5%, 55% 0%, 60% 5%, 65% 0%, 70% 5%,
+            75% 0%, 80% 5%, 85% 0%, 90% 5%, 95% 0%, 100% 5%, 100% 95%,
+            95% 100%, 90% 95%, 85% 100%, 80% 95%, 75% 100%, 70% 95%,
+            65% 100%, 60% 95%, 55% 100%, 50% 95%, 45% 100%, 40% 95%,
+            35% 100%, 30% 95%, 25% 100%, 20% 95%, 15% 100%, 10% 95%,
+            5% 100%, 0% 95%, 0% 5%);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,9 +28,9 @@
 }
 
 body {
-    background-color: #1f1f1f;
-    color: #e6c99c;
-    font-family: 'Cinzel', serif;
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+    font-family: var(--font-title);
     min-height: 100vh;
     overflow-x: hidden;
     text-align: center;
@@ -20,19 +43,19 @@ body {
     gap: 1rem;
     padding: 3rem 1rem;
     background: rgba(31, 31, 31, 0.85);
-    border-bottom: 2px solid #4b2e2e;
-    box-shadow: 0 4px 15px rgba(75, 46, 46, 0.5);
+    border-bottom: var(--border-default);
+    box-shadow: 0 4px 15px var(--color-shadow);
 }
 
 .title h1 {
     font-size: 2.8rem;
-    color: #e6c99c;
-    text-shadow: 1px 1px 8px #3d2b2b;
+    color: var(--color-primary);
+    text-shadow: 1px 1px 8px var(--color-accent-mid);
 }
 
 .title h2 {
     font-size: 1.3rem;
-    color: #a1866f;
+    color: var(--color-secondary);
     font-weight: 400;
 }
 
@@ -42,7 +65,7 @@ body {
     align-items: center;
     gap: 2rem;
     padding: 4rem 2rem;
-    background: linear-gradient(to right, rgba(75, 46, 46, 0.95), rgba(31, 31, 31, 0.95));
+    background: var(--gradient-bg);
 }
 
 .mini_games {
@@ -54,27 +77,21 @@ body {
 }
 
 .menu button {
-    background: linear-gradient(to right, #4b2e2e, #3d2b2b);
-    color: #e6c99c;
-    border: 2px solid #a1866f;
+    background: var(--gradient-button);
+    color: var(--color-primary);
+    border: var(--border-default);
     padding: 1rem 2rem;
     font-size: 1.1rem;
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(230, 201, 156, 0.1);
-    clip-path: polygon(5% 0%, 10% 5%, 15% 0%, 20% 5%, 25% 0%, 30% 5%, 35% 0%,
-            40% 5%, 45% 0%, 50% 5%, 55% 0%, 60% 5%, 65% 0%, 70% 5%,
-            75% 0%, 80% 5%, 85% 0%, 90% 5%, 95% 0%, 100% 5%, 100% 95%,
-            95% 100%, 90% 95%, 85% 100%, 80% 95%, 75% 100%, 70% 95%,
-            65% 100%, 60% 95%, 55% 100%, 50% 95%, 45% 100%, 40% 95%,
-            35% 100%, 30% 95%, 25% 100%, 20% 95%, 15% 100%, 10% 95%,
-            5% 100%, 0% 95%, 0% 5%);
+    box-shadow: 0 0 10px var(--color-shadow-light);
+    clip-path: var(--clip-zigzag);
 }
 
 .menu button:hover {
-    background: linear-gradient(to right, #a1866f, #4b2e2e);
-    color: #1f1f1f;
-    box-shadow: 0 0 20px rgba(230, 201, 156, 0.5);
+    background: var(--gradient-button-hover);
+    color: var(--color-bg);
+    box-shadow: 0 0 20px var(--color-shadow-strong);
 }

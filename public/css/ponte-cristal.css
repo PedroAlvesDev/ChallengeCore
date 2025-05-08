@@ -1,3 +1,32 @@
+:root {
+  --font-main: 'Gabarito', sans-serif;
+
+  --color-bg: #1f1b24;
+  --color-primary: #e6c99c;
+  --color-accent: #a1866f;
+  --color-glow: #ff1b7b77;
+
+  --text-shadow-strong: 0 0 8px var(--color-accent);
+  --text-shadow-normal: 0 0 5px var(--color-accent);
+  --box-shadow-title: 0 0 10px #a1866f77;
+  --box-shadow-container: 0 0 20px var(--color-glow);
+  --box-shadow-button: inset 0 0 8px rgba(255, 255, 255, 0.1),
+    0 0 10px rgba(0, 255, 255, 0.15),
+    0 0 8px #00000088;
+
+  --border-radius-medium: 12px;
+  --border-radius-large: 16px;
+
+  --transition-default: all 0.3s ease;
+  --transition-transform: transform 0.3s ease;
+
+  --button-size: 120px;
+  --font-size-title: 2em;
+  --font-size-paragraph: 1.2em;
+
+  --blur-strength: 6px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,9 +37,9 @@ body {
   background-image: url(/assets/images/Ponte-de-Cristal-vertical.png);
   background-size: contain;
   background-position: center;
-  background-color: #1f1b24;
-  font-family: 'Gabarito', sans-serif;
-  color: #e6c99c;
+  background-color: var(--color-bg);
+  font-family: var(--font-main);
+  color: var(--color-primary);
   position: relative;
   min-height: 100vh;
   padding: 20px;
@@ -21,22 +50,22 @@ body {
   margin-bottom: 30px;
   background-color: rgba(20, 15, 15, 0.6);
   padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #a1866f;
-  box-shadow: 0 0 10px #a1866f77;
+  border-radius: var(--border-radius-medium);
+  border: 1px solid var(--color-accent);
+  box-shadow: var(--box-shadow-title);
 }
 
 .title h2 {
   text-align: left;
-  font-size: 2em;
-  color: #e6c99c;
-  text-shadow: 0 0 8px #a1866f;
+  font-size: var(--font-size-title);
+  color: var(--color-primary);
+  text-shadow: var(--text-shadow-strong);
 }
 
 .title p {
-  color: #e6c99c;
-  font-size: 1.2em;
-  text-shadow: 0 0 5px #a1866f;
+  color: var(--color-primary);
+  font-size: var(--font-size-paragraph);
+  text-shadow: var(--text-shadow-normal);
   text-align: center;
 }
 
@@ -48,15 +77,15 @@ body {
   margin-bottom: 30px;
   padding: 20px;
   background: rgba(0, 0, 0, 0.5);
-  border: 2px solid #a1866f;
-  border-radius: 16px;
-  box-shadow: 0 0 20px #ff1b7b77;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--box-shadow-container);
 }
 
 .result {
-  color: #e6c99c;
-  font-size: 1.2em;
-  text-shadow: 0 0 5px #a1866f;
+  color: var(--color-primary);
+  font-size: var(--font-size-paragraph);
+  text-shadow: var(--text-shadow-normal);
   text-align: center;
 }
 
@@ -67,26 +96,26 @@ body {
 }
 
 .glassBridge button {
-  width: 120px;
-  height: 120px;
-  font-size: 1.2em;
+  width: var(--button-size);
+  height: var(--button-size);
+  font-size: var(--font-size-paragraph);
   font-weight: bold;
-  color: #e6c99c;
+  color: var(--color-primary);
   background: rgba(61, 43, 43, 0.08);
   border: 2px solid rgba(161, 134, 111, 0.4);
-  border-radius: 12px;
+  border-radius: var(--border-radius-medium);
   cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1), 0 0 10px rgba(0, 255, 255, 0.15), 0 0 8px #00000088;
+  transition: var(--transition-default);
+  backdrop-filter: blur(var(--blur-strength));
+  -webkit-backdrop-filter: blur(var(--blur-strength));
+  box-shadow: var(--box-shadow-button);
 }
 
 .glassBridge button:hover {
   background: rgba(161, 134, 111, 0.3);
-  color: #1f1b24;
+  color: var(--color-bg);
   transform: scale(1.05);
-  box-shadow: 0 0 12px #e6c99c, 0 0 20px rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 12px var(--color-primary), 0 0 20px rgba(0, 255, 255, 0.2);
 }
 
 .back {
@@ -98,13 +127,13 @@ body {
 }
 
 .back button {
-  color: #e6c99c;
+  color: var(--color-primary);
   font-size: 2em;
   background-color: transparent;
   border: none;
   cursor: pointer;
-  text-shadow: 0 0 5px #a1866f;
-  transition: transform 0.3s ease;
+  text-shadow: var(--text-shadow-normal);
+  transition: var(--transition-transform);
 }
 
 .back button:hover {
